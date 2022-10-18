@@ -1,0 +1,240 @@
+html,
+body {
+    /* background-color: #181818; */
+}
+
+body {
+    overflow-x: hidden;
+    /*Impedisce che la pagina scorra orizzontalmente*/
+    max-width: 100vw;
+    margin: 0;
+}
+
+nav {
+    z-index: 3;
+    background-color: #202020;
+    width: 100vw;
+    position: sticky;
+    top: 0;
+
+    padding: 5px 0;
+    /*spaziamento interno per ottenere l'altezza senza specificarla*/
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+nav img {
+    height: 13px;
+    width: auto;
+}
+
+.round {
+    border-radius: 50%;
+}
+
+nav .sx img {
+    margin-left: 10px;
+}
+
+nav .dx img {
+    margin-right: 10px;
+}
+
+nav .center {
+    display: flex;
+    justify-content: center;
+
+    position: relative;
+    /*per far adattare #searchMenu che è un figlio absolute*/
+}
+
+nav input {
+    width: 35vw;
+    background: #121212;
+    color: #888;
+    padding: 5px;
+    border: solid 1px #313131;
+    margin: 0;
+    border-bottom-left-radius: 1px;
+    border-top-left-radius: 1px;
+    font-size: .65rem;
+}
+
+nav input:focus {
+    outline: 1px solid blue;
+}
+
+
+nav button {
+    border-bottom-right-radius: 1px;
+    border-top-right-radius: 1px;
+    background: #313131;
+    color: white;
+    border: none;
+    margin: 0;
+    padding: 0 15px;
+}
+
+#searchMenu {
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background: white;
+    border: solid 1px lightgray;
+    z-index: 3;
+
+    position: absolute;
+    top: 100%;
+
+    display: none;
+    /*Non visibile finche non vado sull'input*/
+}
+
+nav input:focus+#searchMenu {
+    display: block;
+}
+
+#searchMenu .suggestion {
+    padding: 10px;
+    background: white;
+    transition: all .3s ease;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: .6rem;
+
+}
+
+#searchMenu .suggestion img {
+    height: 9px;
+    margin-right: 15px;
+}
+
+#searchMenu .suggestion span {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font-weight: bold;
+}
+
+#searchMenu .suggestion:hover {
+    background: lightgray;
+}
+
+.relative {
+    position: relative;
+}
+
+
+/*MAIN*/
+
+main {
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box; /*Per evitare che il padding si naggiunga alla width (superando i 100vw totali)*/
+    position: relative;
+    background: #121212;
+}
+
+main section {
+    background-color: #121212;
+    padding-top: 30px;
+    /* border: solid 1px blue; */
+}
+
+#content {
+    width: 66%;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding-right: 20px;
+    flex-direction: column;
+}
+
+#content iframe {
+    width: 100%;
+}
+
+#related {
+    padding-top: 20px;
+    width: 33%;
+}
+
+
+.row {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+}
+
+.filtri {
+    background-color: lightgray;
+    padding: 3px 6px;
+    font-size: .6rem;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+
+.video {
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    font-size: .6rem;
+    color: white;
+    align-items: flex-start;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.video img {
+    width: 100%;
+}
+
+.video h1 {
+    margin-top: 0;
+}
+.video h2 {
+    margin-top: 0;
+    font-size: .9em;
+    color: lightgray
+}
+
+.video .relative {
+    margin-right: 10px;
+    width: 40%;
+}
+
+.time {
+    background-color: rgba(0, 0, 0, 0.544);
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    right: 2px;
+    bottom: 2px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.options {
+    position: absolute;
+    color: white;
+    z-index: 2;
+    right: 10px;
+    top: 0;
+    display: none;
+}
+
+.video:hover .options {
+    display: block;
+}
